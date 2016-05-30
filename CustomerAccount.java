@@ -1,19 +1,18 @@
-
 public class CustomerAccount {
 
 	private int id; // id_customer
 	private String cpf_cnpj; //cpf_cnpj
 	private String name; // name
-	boolean isActive; // is_active
-	double value; // vl_total
+	private boolean isActive; // is_active
+	private double value; // vl_total
 
 	public CustomerAccount(int id, String cpf_cnpj, String name, boolean isActive, double value) {
 
 		this.setId(id);
 		this.setCpf_cnpj(cpf_cnpj);
 		this.setName(name);
-		this.isActive = isActive;
-		this.value = value;
+		this.setActive(isActive);
+		this.setValue(value);
 	}
 
 	public int getId() {
@@ -38,5 +37,21 @@ public class CustomerAccount {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+
+	public double getValue() {
+		return value;
+	}
+
+	public void setValue(double value) {
+		this.value = value;
 	}
 }
