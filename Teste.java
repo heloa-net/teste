@@ -1,5 +1,8 @@
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.Collections;
+=======
+>>>>>>> ac16cb7955bea5e226a6017b2dd6c3183d6601ae
 import java.util.List;
 
 
@@ -22,7 +25,10 @@ public class Teste {
 		List<CustomerAccount> selecionados = new ArrayList<CustomerAccount>();		
 		
 		selecionados = Table.seleciona(tabela);
+<<<<<<< HEAD
 		Collections.sort(selecionados);
+=======
+>>>>>>> ac16cb7955bea5e226a6017b2dd6c3183d6601ae
 		Table.imprimeSelecionados(selecionados);
 		Table.calculaMedia(selecionados);		
 	}
