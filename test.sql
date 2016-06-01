@@ -38,6 +38,8 @@ test=# SELECT * FROM dm_address_type;
  C               | Comercial
  O               | Outros
 
+# QUESTÃO 2
+
 test=# SELECT * FROM tb_customer;
  id_customer |   nm_customer   |  cpf_cnpj   
 -------------+-----------------+-------------
@@ -49,6 +51,9 @@ test=# SELECT * FROM tb_customer_address;
            1 | R               | Rua das Flores |   1 |              | 01234-567
            1 | C               | Rua das Pedras | 100 | Conjunto 200 | 01234-567
 
+
+#QUESTÃO 3
+
 test=# INSERT INTO tb_customer_address (id_customer, cd_address_type, street, lot, a_references, zip_code) VALUES (1, 'C', 'Rua das Pedras', 100, 'Conjunto 200', '01234-567');
 INSERT 0 1
 test=# SELECT * FROM tb_customer_address; id_customer | cd_address_type |     street     | lot | a_references | zip_code  
@@ -57,8 +62,8 @@ test=# SELECT * FROM tb_customer_address; id_customer | cd_address_type |     st
            1 | C               | Rua das Pedras | 100 | Conjunto 200 | 01234-567
            1 | C               | Rua das Pedras | 100 | Conjunto 200 | 01234-567
 
-#PFK não limita a quantidade de endereços por não ser um identificador único, logo, podem ser #cadastrados para o mesmo cliente quantos endereços o tamanho da tabela admitir.
 
+#QUESTÃO 4
 
 DELETE FROM tb_customer a
 LEFT JOIN tb_customer_address b, b.id_customer = a.id_customer
