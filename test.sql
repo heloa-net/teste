@@ -65,10 +65,6 @@ test=# SELECT * FROM tb_customer_address; id_customer | cd_address_type |     st
 
 #QUESTÃO 4
 
-DELETE FROM tb_customer a
-LEFT JOIN tb_customer_address b, b.id_customer = a.id_customer
-WHERE a.cpf_cnpj = 88877766655;
-
 SELECT id_customer FROM tb_customer 88877766655;
 DELETE FROM tb_customer_address WHERE id_customer = 1;
 DELETE FROM tb_customer WHERE id_customer = 1;
