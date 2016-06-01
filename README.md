@@ -1,11 +1,11 @@
 # teste
 
 Teste Java: nos arquivos do repositório
->Teste SQL: respostas abaixo e vide arquivo test.sql
+Teste SQL: respostas abaixo e vide arquivo test.sql
 
 **Teste SQL**
 
-1. tb_customer: chave primária id_customer
+1. tb_customer: chave primária id_customer<br>
    dm_address_type: chave primária cd_address_type
 
 2. Vide test.sql #QUESTÃO 2
