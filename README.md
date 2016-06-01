@@ -55,8 +55,8 @@ test=# SELECT * FROM tb_customer_address;
 -------------+-----------------+----------------+-----+--------------+-----------
            1 | R               | Rua das Flores |   1 |              | 01234-567
            1 | C               | Rua das Pedras | 100 | Conjunto 200 | 01234-567
+´´´
 
-***
 
 1. tb_customer: chave primária id_customer
    dm_address_type: chave primária cd_address_type
