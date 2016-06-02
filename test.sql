@@ -15,7 +15,6 @@ lot int,
 a_references varchar(255), // modificado para não confundir com a keyword references
 zip_code varchar(255));
 
-test=# \d
               List of relations
  Schema |        Name         | Type  | Owner 
 --------+---------------------+-------+-------
@@ -31,7 +30,7 @@ INSERT INTO tb_customer (id_customer, nm_customer, cpf_cnpj) VALUES (1, 'Joãozi
 INSERT INTO tb_customer_address (id_customer, cd_address_type, street, lot, zip_code) VALUES (1, 'R', 'Rua das Flores', 1, '01234-567');
 INSERT INTO tb_customer_address (id_customer, cd_address_type, street, lot, a_references, zip_code) VALUES (1, 'C', 'Rua das Pedras', 100, 'Conjunto 200', '01234-567');
 
-test=# SELECT * FROM dm_address_type;
+SELECT * FROM dm_address_type;
  cd_address_type | ds_address_type 
 -----------------+-----------------
  R               | Residencial
@@ -40,12 +39,12 @@ test=# SELECT * FROM dm_address_type;
 
 # QUESTÃO 2
 
-test=# SELECT * FROM tb_customer;
+SELECT * FROM tb_customer;
  id_customer |   nm_customer   |  cpf_cnpj   
 -------------+-----------------+-------------
            1 | Joãozinho Silva | 88877766655
 
-test=# SELECT * FROM tb_customer_address;
+SELECT * FROM tb_customer_address;
  id_customer | cd_address_type |     street     | lot | a_references | zip_code  
 -------------+-----------------+----------------+-----+--------------+-----------
            1 | R               | Rua das Flores |   1 |              | 01234-567
@@ -54,9 +53,10 @@ test=# SELECT * FROM tb_customer_address;
 
 #QUESTÃO 3
 
-test=# INSERT INTO tb_customer_address (id_customer, cd_address_type, street, lot, a_references, zip_code) VALUES (1, 'C', 'Rua das Pedras', 100, 'Conjunto 200', '01234-567');
-INSERT 0 1
-test=# SELECT * FROM tb_customer_address; id_customer | cd_address_type |     street     | lot | a_references | zip_code  
+INSERT INTO tb_customer_address (id_customer, cd_address_type, street, lot, a_references, zip_code) VALUES (1, 'C', 'Rua das Pedras', 100, 'Conjunto 200', '01234-567');
+
+SELECT * FROM tb_customer_address; 
+ id_customer | cd_address_type |     street     | lot | a_references | zip_code  
 -------------+-----------------+----------------+-----+--------------+-----------
            1 | R               | Rua das Flores |   1 |              | 01234-567
            1 | C               | Rua das Pedras | 100 | Conjunto 200 | 01234-567
@@ -65,15 +65,15 @@ test=# SELECT * FROM tb_customer_address; id_customer | cd_address_type |     st
 
 #QUESTÃO 4
 
-SELECT id_customer FROM tb_customer 88877766655;
-DELETE FROM tb_customer_address WHERE id_customer = 1;
+SELECT id_customer FROM tb_customer WHERE cpf_cnpj = 88877766655; // Substituir pelo CPF do cliente que deve ser removido
+DELETE FROM tb_customer_address WHERE id_customer = 1; // Substituir pelo id encontrado
 DELETE FROM tb_customer WHERE id_customer = 1;
 
-test=# SELECT * FROM tb_customer_address; id_customer | cd_address_type | street | lot | a_references | zip_code 
+SELECT * FROM tb_customer_address; id_customer | cd_address_type | street | lot | a_references | zip_code 
 -------------+-----------------+--------+-----+--------------+----------
 (0 rows)
 
-test=# SELECT * FROM tb_customer;
+SELECT * FROM tb_customer;
  id_customer | nm_customer | cpf_cnpj 
 -------------+-------------+----------
 (0 rows)
